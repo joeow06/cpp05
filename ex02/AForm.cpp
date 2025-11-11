@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
 Form::Form() : _name("Default"), _signed(false), _signGrade(150), _exeGrade(150) {}

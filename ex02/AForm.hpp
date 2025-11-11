@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <exception>
 # include <iostream>
@@ -27,7 +27,7 @@ class Form
 		const int _exeGrade;
 	public:
 		Form();
-		~Form();
+		virtual ~Form();
 		Form(const Form &other);
 		Form& operator=(const Form &other);
 		Form(std::string name, int signGrade, int exeGrade);
