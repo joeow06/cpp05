@@ -24,7 +24,8 @@ SRCS_DIR    = ./
 OBJS_DIR    = bin
 
 # Source files
-SRCS_FILES  = main.cpp Bureaucrat.cpp Form.cpp
+SRCS_FILES  = main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp \
+				ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 OBJS_FILES  = $(patsubst $(SRCS_DIR)%.cpp, $(OBJS_DIR)/%.o, $(SRCS_FILES))
 
 #------------------------------------------------------------------------------#
