@@ -15,10 +15,13 @@
 
 Form::Form() : _name("Default"), _signed(false), _signGrade(150), _exeGrade(150) {}
 
-Form::~Form() {}
+Form::~Form()
+{
+	//std::cout << "Form destructor called" << std::endl;
+}
 
 Form::Form(const Form &other) : _name(other.getName()), _signed(other.getSigned()),
-	_signGrade(other.getSignGrade()), _exeGrade(other.getSignGrade()) {}
+	_signGrade(other.getSignGrade()), _exeGrade(other.getExeGrade()) {}
 
 Form& Form::operator=(const Form &other)
 {
@@ -61,7 +64,7 @@ void Form::beSigned(Bureaucrat &bureaucrat)
 	if (bureaucrat.getGrade() <= this->getSignGrade())
 		this->setSigned(true);
 	else
-		throw GradeTooHighException();
+		throw GradeTooLowException();
 }
 
 void Form::setSigned(bool value)
@@ -71,12 +74,12 @@ void Form::setSigned(bool value)
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-    return ("Form grade is too high");
+    return ("Grade is too high");
 }
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-    return ("Form grade is too low");
+    return ("Grade is too low");
 }
 
 std::ostream& operator<<(std::ostream &out, Form const &a)
