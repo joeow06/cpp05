@@ -10,3 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PresidentialPardonForm.hpp"
+
+PresidentialPardonForm::PresidentialPardonForm() : target("Default") {}
+
+PresidentialPardonForm::~PresidentialPardonForm() {}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other) : target(other.target) {}
+
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &other)
+{
+	if (this != &other)
+	{
+		this->target = other.target;
+	}
+	return (*this);
+}
