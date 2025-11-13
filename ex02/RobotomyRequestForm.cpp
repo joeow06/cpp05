@@ -10,3 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "RobotomyRequestForm.hpp"
+
+RobotomyRequestForm::RobotomyRequestForm() : target("Default") {}
+
+RobotomyRequestForm::~RobotomyRequestForm() {}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : target(other.target) {}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
+{
+	if (this != &other)
+	{
+		this->target = other.target;
+	}
+	return (*this);
+}
