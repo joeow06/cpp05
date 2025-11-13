@@ -10,3 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ShrubberyCreationForm.hpp"
+
+ShrubberyCreationForm::ShrubberyCreationForm() : target("Default") {}
+
+ShrubberyCreationForm::~ShrubberyCreationForm() {}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : target(other.target) {}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
+{
+	if (this != &other)
+	{
+		this->target = other.target;
+	}
+	return (*this);
+}
