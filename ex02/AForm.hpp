@@ -33,6 +33,8 @@ public:
 	AForm &operator=(const AForm &other);
 	AForm(std::string name, int signGrade, int exeGrade);
 
+	virtual void execute(Bureaucrat const & executor) const = 0;
+
 	const std::string getName() const;
 	bool getSigned() const;
 	int getSignGrade() const;
