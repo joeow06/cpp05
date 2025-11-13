@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,46 +10,47 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AFORM_HPP
-#define AFORM_HPP
+#ifndef AForm_HPP
+#define AForm_HPP
 
 #include <exception>
-# include <iostream>
+#include <iostream>
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
-	private:
-		const std::string _name;
-		bool _signed;
-		const int _signGrade;
-		const int _exeGrade;
+private:
+	const std::string _name;
+	bool _signed;
+	const int _signGrade;
+	const int _exeGrade;
+
+public:
+	AForm();
+	virtual ~AForm();
+	AForm(const AForm &other);
+	AForm &operator=(const AForm &other);
+	AForm(std::string name, int signGrade, int exeGrade);
+
+	const std::string getName() const;
+	bool getSigned() const;
+	int getSignGrade() const;
+	int getExeGrade() const;
+	void beSigned(Bureaucrat &value);
+	void setSigned(bool value);
+	class GradeTooHighException : public std::exception
+	{
 	public:
-		Form();
-		virtual ~Form();
-		Form(const Form &other);
-		Form& operator=(const Form &other);
-		Form(std::string name, int signGrade, int exeGrade);
+		virtual const char *what() const throw();
+	};
+	class GradeTooLowException : public std::exception
+	{
+	public:
+		virtual const char *what() const throw();
+	};
+};
 
-		const std::string getName() const;
-		bool getSigned() const;
-		int getSignGrade() const;
-		int getExeGrade() const;
-		void beSigned(Bureaucrat &value);
-		void setSigned(bool value);
-		class GradeTooHighException : public std::exception
-		{
-			public:
-				virtual const char* what() const throw();
-		} ;
-		class GradeTooLowException : public std::exception
-		{
-			public:
-				virtual const char* what() const throw();
-		} ;
-} ;
-
-std::ostream& operator<<(std::ostream &out, Form const &a);
+std::ostream &operator<<(std::ostream &out, AForm const &a);
 
 #endif
