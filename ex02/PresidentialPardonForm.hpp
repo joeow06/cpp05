@@ -1,0 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/13 21:14:59 by jow               #+#    #+#             */
+/*   Updated: 2025/11/13 21:15:00 by jow              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
+
+# include "AForm.hpp"
+
+class PresidentialPardonForm : public AForm
+{
+	public:
+		PresidentialPardonForm();
+		~PresidentialPardonForm();
+		PresidentialPardonForm(const PresidentialPardonForm &other);
+		PresidentialPardonForm& operator=(const PresidentialPardonForm &other);
+} ;
+
+#endif
