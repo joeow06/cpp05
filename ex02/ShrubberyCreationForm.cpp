@@ -11,18 +11,26 @@
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include "Bureaucrat.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : target("Default") {}
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137) , _target("default") {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : target(other.target) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : _target(other._target) {}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target) {}
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
 {
 	if (this != &other)
 	{
-		this->target = other.target;
+		this->_target = other._target;
 	}
 	return (*this);
+}
+
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+	//this is just a test
 }
