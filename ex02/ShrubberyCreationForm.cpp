@@ -32,5 +32,5 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	//this is just a test
+	std::cout << "This form is executed by " << executor.getName() << std::endl;
 }

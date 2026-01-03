@@ -11,7 +11,7 @@
 
 # Compiler and flags
 CXX         = c++
-CXXFLAGS    = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS    = -Wall -Werror -Wextra -std=c++98
 INCLUDES    = -I$(INC_DIR)
 RM          = rm -rf
 
@@ -24,7 +24,7 @@ SRCS_DIR    = ./
 OBJS_DIR    = bin
 
 # Source files
-SRCS_FILES  = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
+SRCS_FILES  = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp\
 				ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 OBJS_FILES  = $(patsubst $(SRCS_DIR)%.cpp, $(OBJS_DIR)/%.o, $(SRCS_FILES))
 
