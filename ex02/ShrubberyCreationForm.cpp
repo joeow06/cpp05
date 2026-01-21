@@ -30,10 +30,19 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
-void ShrubberyCreationForm::doExecute(Bureaucrat const & executor) const
+void ShrubberyCreationForm::doExecute() const
 {
-	(void)executor;
-	std::cout << "This form is executed by " << executor.getName() << std::endl;
+	std::ofstream outFile(this->_target + "_shrubbery");
+	outFile << "       _-_" << std::endl;
+	outFile << "    /~~   ~~\\" << std::endl;
+	outFile << " /~~         ~~\\" << std::endl;
+	outFile << "{               }" << std::endl;
+	outFile << " \\  _-     -_  /" << std::endl;
+	outFile << "   ~  \\\\ //  ~" << std::endl;
+	outFile << "_- -   | | _- _" << std::endl;
+	outFile << "  _ -  | |   -_" << std::endl;
+	outFile << "       | |" << std::endl;
+	outFile.close();
 }
 
 std::string ShrubberyCreationForm::getTarget() const
