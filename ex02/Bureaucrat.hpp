@@ -15,6 +15,7 @@
 #define BUREAUCRAT_HPP
 
 # include <iostream>
+# include <fstream>
 
 class AForm;
 
