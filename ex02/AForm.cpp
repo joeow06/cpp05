@@ -92,3 +92,16 @@ std::ostream &operator<<(std::ostream &out, AForm const &a)
 	out << "Name: " << a.getName() << " | Status: " << status << " | Sign Grade: " << a.getSignGrade() << " | Execute Grade: " << a.getExeGrade() << std::endl;
 	return out;
 }
+
+void AForm::execute(Bureaucrat const & executor) const
+{
+	if (!this->getSigned())
+	{
+		std::cout << "Form is not signed" << std::endl;
+		return;
+	}
+	if (executor.getGrade() > this->getExeGrade())
+		throw GradeTooHighException();
+
+	this->doExecute(executor);
+}

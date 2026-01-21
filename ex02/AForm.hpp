@@ -26,6 +26,9 @@ private:
 	const int _signGrade;
 	const int _exeGrade;
 
+protected:
+	virtual void doExecute(Bureaucrat const & executor) const = 0;
+
 public:
 	AForm();
 	virtual ~AForm();
@@ -33,7 +36,7 @@ public:
 	AForm &operator=(const AForm &other);
 	AForm(std::string name, int signGrade, int exeGrade);
 
-	virtual void execute(Bureaucrat const & executor) const = 0;
+	void execute(Bureaucrat const & executor) const;
 
 	const std::string getName() const;
 	bool getSigned() const;
