@@ -16,6 +16,7 @@
 
 # include <iostream>
 # include <fstream>
+# include <stdlib.h>
 
 class AForm;
 
