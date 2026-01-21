@@ -30,14 +30,8 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 	return (*this);
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const & executor) const
+void PresidentialPardonForm::doExecute(Bureaucrat const & executor) const
 {
-	if (!this->getSigned())
-	{
-		std::cout << "Form is not signed" << std::endl;
-		return;
-	}
-	if (executor.getGrade() > this->getExeGrade())
-		throw GradeTooHighException();
+	(void) executor;
 	std::cout << "This form is executed by " << executor.getName() << std::endl;
 }
