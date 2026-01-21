@@ -30,8 +30,15 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 	return (*this);
 }
 
-void RobotomyRequestForm::doExecute(Bureaucrat const & executor) const
+void RobotomyRequestForm::doExecute() const
 {
-	(void)executor;
-	std::cout << "This form is executed by " << executor.getName() << std::endl;
+	int num;
+
+	srand(time(NULL));
+	num = rand() % 2;
+	std::cout << "Zzzzzzzzt.....Zzzzzzzzt" << std::endl;
+	if (num == 1)
+		std::cout << this->_target << " has been robotomized!" << std::endl;
+	else
+		std::cout << "Robotomy failed..." << std::endl;
 }
