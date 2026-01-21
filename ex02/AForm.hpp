@@ -27,7 +27,7 @@ private:
 	const int _exeGrade;
 
 protected:
-	virtual void doExecute(Bureaucrat const & executor) const = 0;
+	virtual void doExecute() const = 0;
 
 public:
 	AForm();
