@@ -23,7 +23,7 @@ int main(void)
 	{
 		AForm* form = new ShrubberyCreationForm("Randy");
 		std::cout << form->getName() << std::endl;
-		Bureaucrat joe("Joe", 71);
+		Bureaucrat joe("Joe", 1);
 		joe.signForm(*form);
 		joe.executeForm(*form);
 		std::cout << std::endl;
