@@ -32,5 +32,17 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
+	if (!this->getSigned())
+	{
+		std::cout << "Form is not signed" << std::endl;
+		return;
+	}
+	if (executor.getGrade() > this->getExeGrade())
+		throw GradeTooHighException();
 	std::cout << "This form is executed by " << executor.getName() << std::endl;
+}
+
+std::string ShrubberyCreationForm::getTarget() const
+{
+	return (this->_target);
 }

@@ -21,12 +21,19 @@ int main(void)
 {
 	try
 	{
-		AForm* form = new ShrubberyCreationForm();
+		AForm* form = new ShrubberyCreationForm("Randy");
 		std::cout << form->getName() << std::endl;
-		Bureaucrat joe("Joe", 149);
+		Bureaucrat joe("Joe", 1);
 		joe.signForm(*form);
-		std::cout << form->getSigned() << std::endl;
 		joe.executeForm(*form);
+
+		AForm* form2 = new RobotomyRequestForm();
+		joe.signForm(*form2);
+		joe.executeForm(*form2);
+
+		AForm* form3 = new PresidentialPardonForm();
+		joe.signForm(*form3);
+		joe.executeForm(*form3);
 	}
 	catch (const std::exception &e)
 	{

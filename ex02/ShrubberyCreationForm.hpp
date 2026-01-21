@@ -28,6 +28,7 @@ class ShrubberyCreationForm : public AForm
 
 		ShrubberyCreationForm(std::string target);
 		void execute(Bureaucrat const & executor) const;
+		std::string getTarget() const;
 };
 
 #endif

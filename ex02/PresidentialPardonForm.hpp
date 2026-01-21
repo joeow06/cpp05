@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 21:14:59 by jow               #+#    #+#             */
-/*   Updated: 2025/11/17 12:50:10 by jow              ###   ########.fr       */
+/*   Created: 2025/11/13 21:14:57 by jow               #+#    #+#             */
+/*   Updated: 2025/11/13 21:14:58 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 class PresidentialPardonForm : public AForm
 {
 	private:
-		std::string target;
+		std::string _target;
 
 	public:
 		PresidentialPardonForm();
 		~PresidentialPardonForm();
 		PresidentialPardonForm(const PresidentialPardonForm &other);
+		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm& operator=(const PresidentialPardonForm &other);
 
 		void execute(Bureaucrat const & executor) const;
