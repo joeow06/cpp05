@@ -92,9 +92,10 @@ void Bureaucrat::executeForm(AForm const & form)
 	try
 	{
 		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << "Failed to execute because Bureaucrat's " << e.what() << std::endl;
+		std::cerr << "Execution failed: " << this->getName() << "'s " << e.what() << std::endl;
 	}
 }
