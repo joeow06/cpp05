@@ -44,8 +44,3 @@ void ShrubberyCreationForm::doExecute() const
 	outFile << "       | |" << std::endl;
 	outFile.close();
 }
-
-std::string ShrubberyCreationForm::getTarget() const
-{
-	return (this->_target);
-}
