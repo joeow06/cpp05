@@ -38,6 +38,10 @@ int main(void)
 		AForm* form3 = new PresidentialPardonForm("President");
 		joe.signForm(*form3);
 		joe.executeForm(*form3);
+
+		delete form;
+		delete form2;
+		delete form3;
 	}
 	catch (const std::exception &e)
 	{
@@ -64,6 +68,10 @@ int main(void)
 		AForm* form6 = new PresidentialPardonForm("President");
 		randy.signForm(*form6);
 		randy.executeForm(*form6);
+
+		delete form4;
+		delete form5;
+		delete form6;
 	}
 	catch (const std::exception &e)
 	{
@@ -90,6 +98,10 @@ int main(void)
 		AForm* form9 = new PresidentialPardonForm("President");
 		james.signForm(*form9);
 		james.executeForm(*form9);
+
+		delete form7;
+		delete form8;
+		delete form9;
 	}
 	catch (const std::exception &e)
 	{
