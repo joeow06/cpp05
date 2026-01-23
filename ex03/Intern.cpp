@@ -46,18 +46,21 @@ AForm* Intern::makeForm(const std::string name, const std::string target)
 	AForm *form;
 	std::string forms_list[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
 
-	AForm* (*createForms[3])(const std::string&) = {
+	//function pointer array
+	typedef AForm* (*createForms) (const std::string&);
+	createForms createList [3] = {
 		&createShrubbery,
 		&createRobotomy,
-		&createPresidential,
+		&createPresidential
 	};
+
 	i = 0;
 	form = NULL;
 	while (i < 3 && name != forms_list[i])
 		i++;
 	if (i < 3)
 	{
-		form = createForms[i](target);
+		form = createList[i](target);
 		std::cout << "Intern creates " << forms_list[i] << std::endl;
 	}
 	else
