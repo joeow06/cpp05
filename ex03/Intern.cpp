@@ -28,32 +28,38 @@ Intern& Intern::operator=(const Intern &other)
     return (*this);
 }
 
+static AForm* createShrubbery(const std::string& target) {
+    return (new ShrubberyCreationForm(target));
+}
+
+static AForm* createRobotomy(const std::string& target) {
+    return (new RobotomyRequestForm(target));
+}
+
+static AForm* createPresidential(const std::string& target) {
+    return (new PresidentialPardonForm(target));
+}
+
 AForm* Intern::makeForm(const std::string name, const std::string target)
 {
 	int i;
 	AForm *form;
 	std::string forms_list[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
 
+	AForm* (*createForms[3])(const std::string&) = {
+		&createShrubbery,
+		&createRobotomy,
+		&createPresidential,
+	};
 	i = 0;
 	form = NULL;
 	while (i < 3 && name != forms_list[i])
 		i++;
-	switch(i)
+	if (i < 3)
 	{
-		case 0:
-			form = new ShrubberyCreationForm(target);
-			break;
-		case 1:
-			form = new RobotomyRequestForm(target);
-			break;
-		case 2:
-			form = new PresidentialPardonForm(target);
-			break;
-		default:
-			break;
-	}
-	if (form)
+		form = createForms[i](target);
 		std::cout << "Intern creates " << forms_list[i] << std::endl;
+	}
 	else
 		std::cerr << "Form name [" << name << "] doesn't exist" << std::endl;
 	return (form);
