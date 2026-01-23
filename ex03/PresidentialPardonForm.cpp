@@ -19,7 +19,7 @@ PresidentialPardonForm::~PresidentialPardonForm() {}
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other) : _target(other._target) {}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("RobotomyRequestForm", 25, 5), _target(target) {}
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), _target(target) {}
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &other)
 {
