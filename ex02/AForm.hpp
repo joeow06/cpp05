@@ -13,8 +13,10 @@
 #ifndef AForm_HPP
 #define AForm_HPP
 
-#include <exception>
-#include <iostream>
+# include <exception>
+# include <iostream>
+# include <ctime>
+# include <cstdlib>
 
 class Bureaucrat;
 
