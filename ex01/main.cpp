@@ -104,12 +104,14 @@ int main(void)
 	std::cout << "---------- Test 8 ----------" << std::endl;
 	try
 	{
+		Bureaucrat admin("Admin", 1);
 		Form good("Good", 42, 42);
+		admin.signForm(good);
 		std::cout << good << std::endl;
 		Form bad("Bad", 11, 11);
 		std::cout << bad << std::endl;
-
 		bad = good;
+		std::cout << good << std::endl;
 		std::cout << bad << std::endl;
 	}
 	catch (const std::exception &e)
