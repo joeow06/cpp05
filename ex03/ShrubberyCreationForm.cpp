@@ -32,7 +32,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::doExecute() const
 {
-	std::ofstream outFile(this->_target + "_shrubbery");
+	std::ofstream outFile((this->_target + "_shrubbery").c_str());
 	outFile << "       _-_" << std::endl;
 	outFile << "    /~~   ~~\\" << std::endl;
 	outFile << " /~~         ~~\\" << std::endl;
