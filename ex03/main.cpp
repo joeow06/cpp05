@@ -20,11 +20,7 @@
 
 int main(void)
 {
-	// AForm* test;
-	// Intern joe;
 
-	// test = joe.makeForm("PresidentialPardonForm", "LMAO");
-	// (void) test;
 	try
 	{
 		Intern internJoe;
